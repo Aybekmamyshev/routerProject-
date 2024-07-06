@@ -1,10 +1,13 @@
 import React from 'react';
+import Container from "../../component";
 
 const EpisodePage = () => {
     return (
-        <div>
-            EpisodePage
-        </div>
+        <Container>
+            <div>
+                EpisodePage
+            </div>
+        </Container>
     );
 };
 

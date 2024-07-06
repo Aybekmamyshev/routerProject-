@@ -1,10 +1,13 @@
 import React from 'react';
+import Container from "../../component";
 
 const Location = () => {
     return (
-        <div>
-            Location
-        </div>
+        <Container>
+            <div>
+                Location
+            </div>
+        </Container>
     );
 };
 
