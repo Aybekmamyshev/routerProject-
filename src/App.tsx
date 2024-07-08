@@ -6,6 +6,7 @@ import Location from "./pages/LocationPage";
 import LocationPage from "./pages/LocationPage";
 import EpisodePage from "./pages/EpisodePage";
 import HeroSingle from "./pages/HeroSingle";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
                     <Route path={'/hero/:id/'} element={<HeroSingle/>}/>
                     <Route path={'/location'} element={<LocationPage/>}/>
                     <Route path={'/episode'} element={<EpisodePage/>}/>
+                    <Route path={'/*'} element={<NotFound/>}/>
                 </Route>
             </>
         )

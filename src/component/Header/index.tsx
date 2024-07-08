@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './header.module.scss'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -10,13 +10,13 @@ const Header = () => {
             </Link>
             <nav className={styles.nav}>
                 <li className={styles.link}>
-                    <Link className={styles.linkInner} to={'/hero'}>Hero</Link>
+                    <NavLink className={({isActive}) => isActive ? styles.linkInner : styles.linkActive } to={'/hero'}>Hero</NavLink>
                 </li>
                 <li className={styles.link}>
-                    <Link className={styles.linkInner} to={'/location'}>Location</Link>
+                    <NavLink className={({isActive}) => isActive ? styles.linkInner : styles.linkActive } to={'/location'}>Location</NavLink>
                 </li>
                 <li className={styles.link}>
-                    <Link className={styles.linkInner} to={'/episode'}>Episode</Link>
+                    <NavLink className={({isActive}) => isActive ? styles.linkInner : styles.linkActive } to={'/episode'}>Episode</NavLink>
                 </li>
             </nav>
         </div>

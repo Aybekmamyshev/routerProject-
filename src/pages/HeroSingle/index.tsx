@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import useFetch from "../../hook/useFetch";
+import Container from "../../component";
 
 
 interface TypeFetch {
@@ -14,11 +15,13 @@ const HeroSingle = () => {
     const {id} = useParams()
     const {data: item} = useFetch<TypeFetch>(`http://localhost:3001/episodes/${id}`)
     return (
-        <div>
-            {
-                <h2>{item?.name}</h2>
-            }
-        </div>
+        <Container>
+            <div>
+                {
+                    <h2>{item?.name}</h2>
+                }
+            </div>
+        </Container>
     );
 };
 
