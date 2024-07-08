@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
+import Layout from "./component/Layout";
+import HomePage from "./pages/homePage";
+import HeroPage from "./pages/HeroPage";
+import Location from "./pages/LocationPage";
+import LocationPage from "./pages/LocationPage";
+import EpisodePage from "./pages/EpisodePage";
+import HeroSingle from "./pages/HeroSingle";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'/'} element={<HomePage/>}/>
+                    <Route path={'/hero'} element={<HeroPage/>}/>
+                    <Route path={'/hero/:id/'} element={<HeroSingle/>}/>
+                    <Route path={'/location'} element={<LocationPage/>}/>
+                    <Route path={'/episode'} element={<EpisodePage/>}/>
+                    <Route path={'/*'} element={<NotFound/>}/>
+                </Route>
+            </>
+        )
+    )
+    return (
+        <>
+            <RouterProvider router={router}/>
+        </>
+    );
 }
 
 export default App;
